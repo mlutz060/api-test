@@ -10,7 +10,7 @@ env:
   GKE_CLUSTER: cluster-1    # Add your cluster name here.
   GKE_ZONE: us-central1-c   # Add your cluster zone here.
   DEPLOYMENT_NAME: madi-api # Add your deployment name here.
-  IMAGE: madi-api
+  IMAGE: dev-stedi-madi
 
 jobs:
   setup-build-publish-deploy:
@@ -61,7 +61,7 @@ jobs:
     # Push the Docker image to Google Container Registry
     - name: Publish
       run: |-
-        docker push "us-docker.pkg.dev/dark-gateway-365319/madi-api/api-test:latest"
+        docker push "us-docker.pkg.dev/dark-gateway-365319/dev-stedi-madi/api-test:latest"
 
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
